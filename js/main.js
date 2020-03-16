@@ -7,7 +7,7 @@
 //  per evitarvi il copia e incolla e ripulire il codice HTML creando un TEMPLATE.
 // Trovate comunque tutto sul file pdf nella cartella condivisa.
 
-$(document).on("click", ".box", function(){ // azione al click su il DIV BOX generato anche successivamente
+$(document).on("click", ".box", function(event){ // azione al click su il DIV BOX generato anche successivamente
     var that = $(this); // assegno THAT al THIS sotto al click
     console.log($(this));
     $.ajax({ // chiamata con JQUERY alla nostra API
@@ -29,3 +29,9 @@ $(document).on("click", ".box", function(){ // azione al click su il DIV BOX gen
         }
     });
 });
+
+for (var i = 0; i < 36; i++) {
+    var sourceBox = $("#template").html(); // copio il mio TEMPLATE riga box
+    var template = Handlebars.compile(sourceBox); // scrivo una volta sola sola il mio complitaote di HANDLEBARS
+    $('.container').append(template);
+};
