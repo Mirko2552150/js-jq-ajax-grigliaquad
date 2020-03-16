@@ -17,7 +17,7 @@ $(document).on("click", ".box", function(){ // azione al click su il DIV BOX gen
             var numeroClick = data.response; // assegno una VAR al numero random // per la risposta uniamo con il DOT il nome della funzione alla risposta dell'API
             console.log(numeroClick);
             console.log($(this));
-            $(that).text(numeroClick);
+            $(that).text(numeroClick); // inserisco sull'elemento clicckato come testo la VAR numeroCLICK
             if (numeroClick > 5) {
                 $(that).css( "background-color", "red" );
             } else if (numeroClick <= 5) {
